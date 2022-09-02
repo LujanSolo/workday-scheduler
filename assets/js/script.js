@@ -1,1 +1,5 @@
-var placeholder;
+var saveBtn = $('.saveBtn');
+
+saveBtn.on('click', function(){
+    
+})
