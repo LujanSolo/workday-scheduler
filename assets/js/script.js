@@ -1,14 +1,13 @@
 //*establishing globally scoped variables:
 let saveBtn = $('.save-btn');
-const now = moment(); //*establishing current time to use for color-coded timeblocks
 
 
-//* Begin with a document.ready function to load the current day to the top of the page with moment.js...
-$(document).ready(function displayDay() {
-    let currentDay = $('#currentDay');
-    let todayIs = moment().format("[Today is] dddd");
-    currentDay.text(todayIs);
-});
+//* Begin with a function to get values from local storage (if any).
+
+
+//*Display the current day to the top of the page
+$('#currentDay').text("Today is " + moment().format("dddd, MMMM Do"));
+
 
 //*When the user clicks save at the end of any hour row, the entry from the input field goes to local storage...
 saveBtn.on('click', function() {
@@ -17,15 +16,21 @@ saveBtn.on('click', function() {
     localStorage.setItem(hour, userNote);
 })
 
+
 // //*A function to color code the hour rows
 function timeColors() {
-    $('.time-block').each(function(){
-        if (now > $(this).text) {
-            $(this).addClass("future");
-        } else if (now < $(this).text) {
+    let currentTime = moment().hour(); //*to pull the general hour, instead of exact time from moment();
+
+    $('.time-block').each(function() {
+        let taskTime = parseInt($(this).attr("id")); //*taskTime now represents each class="time-block" by their unique id's
+
+        if (currentTime > taskTime) {
             $(this).addClass("past");
-        } else {
+        } 
+        if (currentTime === taskTime) {
             $(this).addClass("present");
+        } else {
+            $(this).addClass("future");
         }
     })
 }
