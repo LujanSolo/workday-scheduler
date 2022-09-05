@@ -29,15 +29,14 @@ saveBtn.on('click', function() {
 
 //*A function to color code the hour rows
 function timeColors() {
-    let currentTime = moment().hour(); //*to pull the general hour, instead of exact time from moment();
+    let currentTime = moment().hours(); //*to pull the general hour, instead of exact time from moment();
 
     $('.time-block').each(function() {
         let taskTime = parseInt($(this).attr("id")); //*taskTime now represents each class="time-block" by their unique id's
 
         if (currentTime > taskTime) {
             $(this).addClass("past");
-        } 
-        if (currentTime === taskTime) {
+        } else if (currentTime === taskTime) {
             $(this).addClass("present");
         } else {
             $(this).addClass("future");
