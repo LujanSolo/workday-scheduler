@@ -1,5 +1,6 @@
 //*establishing globally scoped variables:
 let saveBtn = $('.save-btn');
+const now = moment(); //*establishing current time to use for color-coded timeblocks
 
 //* Begin with a document.ready function to load the current day to the top of the page with moment.js...
 $(document).ready(function displayDay() {
