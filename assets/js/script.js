@@ -14,6 +14,7 @@ $(document).ready(function displayDay() {
 
 //*When the user clicks save at the end of any hour row, the entry from the input field goes to local storage...
 saveBtn.on('click', function() {
-    let timeBlock = $(this).siblings(".time-block").val();
-    localStorage.setItem("note: ", timeBlock);
+    let hour = $(this).siblings('.hour').text();
+    let userNote = $(this).siblings('.time-block').val();
+    localStorage.setItem(hour, userNote);
 })
