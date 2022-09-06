@@ -3,12 +3,15 @@
   <h1 align="center">A simple calendar app for scheduling your work day.</h1>
 </p>
 
-## URL Live link:
+## LINKS
+<a href="https://lujansolo.github.io/workday-scheduler/">Work Day Scheduler: LIVE SITE
+<br />
 
-<br /><br />
-## Github link to repo:
 
-<br /><br />
+<a href="https://github.com/LujanSolo/workday-scheduler/">LujanSolo's Github Repository</a> 
+
+<br />
+
 ## Table of Contents
 
 - [Description](#description)
